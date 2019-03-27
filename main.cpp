@@ -18,13 +18,18 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     //a will be a global variable
-    QString command("a = 7 + 11");
+    QString command("");
 
     //Lua and C++ talk each other using stack 
     lua_State *L = luaL_newstate();
 
+    //mat.sin will work now coz we open up the libraries
+    luaL_openlibs(L);
+    
     //qPrintable macro converts command into char*
-    int r = luaL_dostring(L, qPrintable(command));
+    //int r = luaL_dostring(L, qPrintable(command));
+
+    int r = luaL_dofile(L,"test.lua");
 
     QTextStream ts(stdout);
 
