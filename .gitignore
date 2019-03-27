@@ -41,4 +41,7 @@ Thumbs.db
 
 build/*
 *.qm
-CMakeLists.txt.user
+CMakeLists.txt.user 
+
+#vscode buillshits 
+ipch/*

@@ -7,6 +7,11 @@ set(CMAKE_AUTOMOC ON)
 
 find_package(Qt5Core)
 
+include_directories("lua/win64/include")
+
+
+
 add_executable(${PROJECT_NAME} "main.cpp")
 
-target_link_libraries(${PROJECT_NAME} Qt5::Core)
+
+target_link_libraries(${PROJECT_NAME} Qt5::Core "${CMAKE_SOURCE_DIR}/lua/Win64/lua53.lib")
