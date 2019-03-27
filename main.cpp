@@ -12,6 +12,12 @@ extern "C"{
 }
 
 
+struct Person{
+    std::string name;
+    std::string surname;
+    int age; 
+} person;
+
 
 int main(int argc, char *argv[])
 {
@@ -23,24 +29,36 @@ int main(int argc, char *argv[])
     //Lua and C++ talk each other using stack 
     lua_State *L = luaL_newstate();
 
-    //mat.sin will work now coz we open up the libraries
+    //math.sin etc will work now coz we open up the libraries
     luaL_openlibs(L);
-    
+
     //qPrintable macro converts command into char*
     //int r = luaL_dostring(L, qPrintable(command));
 
-    int r = luaL_dofile(L,"test.lua");
+    int r = luaL_dofile(L,"struct_serialize.lua");
 
-    QTextStream ts(stdout);
+    //QTextStream ts(stdout);
 
     if(r == LUA_OK)
     {
 
-        lua_getglobal(L,"a");
-        if(lua_isnumber(L,-1))
+        //lua_getglobal(L,"a");
+
+
+        // if(lua_isnumber(L,-1))
+        // {
+        //     float a_in_cpp = (float) lua_tonumber(L,-1);
+        //     qDebug() << qPrintable("Global a value is ") << a_in_cpp;
+        // }
+        lua_getglobal(L,"name");
+        
+        if(lua_isstring(L,-1))
         {
-            float a_in_cpp = (float) lua_tonumber(L,-1);
-            qDebug() << qPrintable("Global a value is ") << a_in_cpp;
+            person.name =  lua_tostring(L,-1);            
+            QString msg("value %1");
+            QString name =  QString::fromStdString(person.name);
+
+            qInfo() << qPrintable(msg.arg(name));
         }
     }
     else
