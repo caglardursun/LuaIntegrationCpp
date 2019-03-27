@@ -4,6 +4,6 @@
 
 # Steps
 
-    [ ] Download the latest version of lua from lua.org download->binary section
+    [ ] Download the latest version of [lua](http://lua.org) download->binary section
     ![Screenshot](images/SS1.jpg)
     
