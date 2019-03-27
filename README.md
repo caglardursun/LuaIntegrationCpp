@@ -1,7 +1,7 @@
 # LuaIntegrationCpp
 
 ### Purpose of this project
-    [ ] How to integrate existing c++ project with Lua using Vscode & CMake
+    [ x ] How to integrate existing c++ project with Lua using Vscode & CMake
 
 # Steps
 
