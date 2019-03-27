@@ -12,12 +12,15 @@ extern "C"{
 }
 
 
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
+    //a will be a global variable
     QString command("a = 7 + 11");
 
+    //Lua and C++ talk each other using stack 
     lua_State *L = luaL_newstate();
 
     //qPrintable macro converts command into char*
@@ -42,6 +45,7 @@ int main(int argc, char *argv[])
         qDebug() << qPrintable(error);
         
     }
-    
+    //system("pause");
+    lua_close(L);
     return a.exec();
 }
