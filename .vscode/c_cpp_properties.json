@@ -5,9 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/lua/Win64/include",
-                "C:\\Qt\\Qt5.12.1\\5.12.1\\msvc2017_64\\include",
-                "C:\\Qt\\Qt5.12.1\\5.12.1\\msvc2017_64\\include\\QtCore",
-                "C:\\Qt\\Qt5.12.1\\5.12.1\\msvc2017_64\\.\\mkspecs\\win32-msvc"                
+                "C:\\\\Qt\\\\Qt5.12.1\\\\5.12.1\\\\msvc2017_64\\\\include",
+                "C:\\\\Qt\\\\Qt5.12.1\\\\5.12.1\\\\msvc2017_64\\\\include\\\\QtCore",
+                "C:\\\\Qt\\\\Qt5.12.1\\\\5.12.1\\\\msvc2017_64\\\\.\\\\mkspecs\\\\win32-msvc"
             ],
             "defines": [
                 "_DEBUG",
@@ -16,11 +16,40 @@
             ],
             "windowsSdkVersion": "10.0.17763.0",
             "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
-            "cStandard": "c11",            
+            "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "msvc-x64",
             "configurationProvider": "vector-of-bool.cmake-tools",
             "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        },
+        {
+            "name": "Linux_x64",
+            "intelliSenseMode": "clang-x64",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/lua/Linux64/include",
+                "/opt/Qt/5.12.1/gcc_64/include",
+                "/opt/Qt/5.12.1/gcc_64/include/QtCore",
+                "/opt/Qt/5.12.1/gcc_64/./mkspecs/linux-g++",
+                "/opt/Qt/5.12.1/gcc_64/include/QtWidgets",
+                "/opt/Qt/5.12.1/gcc_64/include/QtGui",
+                "/opt/Qt/5.12.1/gcc_64/include/QtNetwork"                
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "browse": {
+                "path": [
+                    "/opt/Qt/5.12.1/gcc_64/lib*",
+                    "/usr/lib/*"
+                ]
+            },
+            "configurationProvider": "vector-of-bool.cmake-tools"
         }
     ],
     "version": 4
