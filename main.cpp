@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     //qPrintable macro converts command into char*
     //int r = luaL_dostring(L, qPrintable(command));
 
-    int r = luaL_dofile(L,"struct_serialize.lua");
+    int r = luaL_dofile(L,"../struct_serialize.lua");
 
     //QTextStream ts(stdout);
 
