@@ -15,19 +15,18 @@ find_package(Qt5Core)
 
 if(UNIX)
     set(library_headers "${CMAKE_SOURCE_DIR}/lua/Linux64/include")
-    set(library_path "${CMAKE_SOURCE_DIR}/lua/Linux64")
+    
 
     add_library(liblua53 STATIC IMPORTED)
-    set_property(TARGET liblua53 PROPERTY IMPORTED_LOCATION "${library_path}/liblua53.so")
+    set_property(TARGET liblua53 PROPERTY IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/lua/Linux64/liblua53.so")
     message("Unix called")
 endif()
     
 if(WIN32)
-    set(library_headers "${CMAKE_SOURCE_DIR}/lua/win64/include")    
-    set(library_path "${CMAKE_SOURCE_DIR}/lua/win64")
-
+    set(library_headers "${CMAKE_SOURCE_DIR}/lua/Win64/include")    
+    
     add_library(liblua53 STATIC IMPORTED)
-    set_property(TARGET liblua53 PROPERTY IMPORTED_LOCATION "${library_path}/liblua53.dll")
+    set_property(TARGET liblua53 PROPERTY IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/lua/Win64/lua53.lib")
     message("Win32 called")
 endif()
 
